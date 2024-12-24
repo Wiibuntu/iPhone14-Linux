@@ -192,6 +192,26 @@ static const char *const compat_hwcap2_str[] = {
 };
 #endif /* CONFIG_COMPAT */
 
+
+
+static const struct midr_info midr_map[] = {
+         .partnum = 0xd4c0,
+         .model = "Cortex-A78C",
+     },
++    {
++        .implementor = 0x02,
++        .partnum = 0x0002,
++        .model = "Apple A15 Performance Core",
++    },
++    {
++        .implementor = 0x02,
++        .partnum = 0x0003,
++        .model = "Apple A15 Efficiency Core",
++    },
+ };
+
+ const char *get_cpu_model(unsigned int cpu)
+
 static int c_show(struct seq_file *m, void *v)
 {
 	int i, j;

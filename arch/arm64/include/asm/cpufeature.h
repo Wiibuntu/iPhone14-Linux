@@ -47,6 +47,10 @@ enum ftr_type {
 	FTR_HIGHER_OR_ZERO_SAFE,	/* Bigger value is safe, but 0 is biggest */
 };
 
+#define ARM64_HAS_APPLE_A15_FEATURES   (1 << 5)
+
+extern struct arm64_cpu_capabilities arm64_errata[];
+
 #define FTR_STRICT	true	/* SANITY check strict matching required */
 #define FTR_NONSTRICT	false	/* SANITY check ignored */
 

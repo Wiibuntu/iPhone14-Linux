@@ -3904,3 +3904,21 @@ ssize_t cpu_show_meltdown(struct device *dev, struct device_attribute *attr,
 		return sprintf(buf, "Vulnerable\n");
 	}
 }
+
+static const struct arm64_cpu_capabilities arm64_features[] = {
+             .type = ARM64_CPUCAP_SYSTEM_FEATURE,
+             .capability = ARM64_HAS_LSE_ATOMICS,
+         },
++        {
++            .desc = "Apple A15 CPU Features",
++            .type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
++            .matches = has_apple_a15_features,
++            .capability = ARM64_HAS_APPLE_A15_FEATURES,
++        },
+ };
+
+ static bool has_apple_a15_features(const struct arm64_cpu_capabilities *entry, int scope)
+ {
+     return read_cpuid_midr() == MIDR_APPLE_A15_PERF ||
+            read_cpuid_midr() == MIDR_APPLE_A15_EFF;
+ }

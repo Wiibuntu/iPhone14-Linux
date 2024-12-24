@@ -840,6 +840,19 @@ config ARM64_ERRATUM_2658417
 
 	  If unsure, say Y.
 
+config CPU_APPLE_A15
+        bool "Support for Apple A15 CPU"
+        depends on ARM64
+        help
+          Adds support for the Apple A15 CPU, including detection of
+          performance and efficiency cores, and integration with the
+          arm64 CPU feature framework. Select this option if you are
+          using hardware based on the Apple A15 chip.
+
+         If unsure, say N.
+
+
+
 config ARM64_ERRATUM_2119858
 	bool "Cortex-A710/X2: 2119858: workaround TRBE overwriting trace data in FILL mode"
 	default y
