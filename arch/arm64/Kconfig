@@ -459,6 +459,17 @@ config AMPERE_ERRATUM_AC03_CPU_38
 config ARM64_WORKAROUND_CLEAN_CACHE
 	bool
 
+config CPU_APPLE_A15
+        bool "Support for Apple A15 CPU"
+        depends on ARM64
+        help
+          Adds support for the Apple A15 CPU, including detection of
+          performance and efficiency cores, and integration with the
+          arm64 CPU feature framework. Select this option if you are
+          using hardware based on the Apple A15 chip.
+
+
+
 config ARM64_ERRATUM_826319
 	bool "Cortex-A53: 826319: System might deadlock if a write cannot complete until read data is accepted"
 	default y
@@ -839,15 +850,6 @@ config ARM64_ERRATUM_2658417
 	  user-space should not be using these instructions.
 
 	  If unsure, say Y.
-
-config CPU_APPLE_A15
-        bool "Support for Apple A15 CPU"
-        depends on ARM64
-        help
-          Adds support for the Apple A15 CPU, including detection of
-          performance and efficiency cores, and integration with the
-          arm64 CPU feature framework. Select this option if you are
-          using hardware based on the Apple A15 chip.
 
 
 
