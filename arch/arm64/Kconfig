@@ -849,8 +849,6 @@ config CPU_APPLE_A15
           arm64 CPU feature framework. Select this option if you are
           using hardware based on the Apple A15 chip.
 
-         If unsure, say N.
-
 
 
 config ARM64_ERRATUM_2119858
